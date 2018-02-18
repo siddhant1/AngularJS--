@@ -1,0 +1,18 @@
+.pointer{
+    cursor: pointer;
+}
+
+.DeleteReady{
+    background-color: #EA2027;
+}
+.DeleteReady{
+    color: white;
+}
+
+.NotReady{
+    background-color: #3498db;
+    color: white;
+}
+.checked{
+    color: red;
+}
