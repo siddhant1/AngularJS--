@@ -8,11 +8,17 @@ app.controller("my-cntrl", function($scope, factory) {
     var item = new Item($scope.id, $scope.name, $scope.url, $scope.Desc);
     factory.arrayPush(item);
     $scope.arr = factory.arr;
-    $scope.id++;
+    if (!editObject.edited) {
+      $scope.id++;
+    }
+    else { 
+      $scope.id = "";
+    }
     $scope.name = "";
     $scope.url = "";
     $scope.Desc = "";
     filterBruh();
+    editObject.edited = false;
   };
   $scope.Toggle = id => {
     $scope.arr.forEach(element => {
@@ -53,6 +59,7 @@ app.controller("my-cntrl", function($scope, factory) {
         $scope.url = element.url;
         element.edited = true;
         editObject = object;
+        editObject.edited = true;
       }
     });
   };
